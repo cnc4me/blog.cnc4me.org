@@ -1,7 +1,9 @@
+/* eslint-env node */
 module.exports = {
-  content: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  mode: "jit",
+  content: ["./components/**/*.tsx", "./pages/**/*.tsx"],
   theme: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
-}
+  plugins: []
+};

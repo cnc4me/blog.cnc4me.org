@@ -1,5 +1,7 @@
-const SectionSeparator = () => {
-  return <hr className="border-neutral-200 mt-28 mb-24" />
-}
+import React from "react";
 
-export default SectionSeparator
+const SectionSeparator = () => {
+  return <hr className="mb-24 border-neutral-200 mt-28" />;
+};
+
+export default SectionSeparator;
