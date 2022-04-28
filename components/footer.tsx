@@ -9,7 +9,7 @@ const Footer = () => {
       <Container>
         <div className="flex flex-col items-center py-28 lg:flex-row">
           <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
+            Created for the benefit of all machinists.
           </h3>
           <div className="flex flex-col items-center justify-center lg:flex-row lg:pl-4 lg:w-1/2">
             <a

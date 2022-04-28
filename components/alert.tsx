@@ -1,7 +1,7 @@
 import cn from "classnames";
 import React from "react";
 
-import { EXAMPLE_PATH } from "../lib/constants";
+import { BLOG_GITHUB_URL } from "../lib/constants";
 import Container from "./container";
 
 type Props = {
@@ -33,7 +33,7 @@ const Alert = ({ preview }: Props) => {
             <>
               The source code for this blog is{" "}
               <a
-                href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
+                href={BLOG_GITHUB_URL}
                 className="underline transition-colors duration-200 hover:text-blue-600"
               >
                 available on GitHub
