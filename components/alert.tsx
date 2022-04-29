@@ -13,7 +13,7 @@ const Alert = ({ preview }: Props) => {
     <div
       className={cn("border-b", {
         "bg-neutral-800 border-neutral-800 text-white": preview,
-        "bg-neutral-50 border-neutral-200": !preview
+        "bg-purple-200 border-purple-600": !preview
       })}
     >
       <Container>
@@ -34,7 +34,7 @@ const Alert = ({ preview }: Props) => {
               The source code for this blog is{" "}
               <a
                 href={BLOG_GITHUB_URL}
-                className="underline transition-colors duration-200 hover:text-blue-600"
+                className="underline transition-colors duration-200 hover:text-violet-700"
               >
                 available on GitHub
               </a>
