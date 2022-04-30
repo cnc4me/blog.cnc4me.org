@@ -1,0 +1,192 @@
+9038005 adding some readme.md around and creating subtrees
+9132376 readme update
+d16839d new site build
+538c342 lots of updates including pagination, tools view, welcome tab and more
+33bb119 adding redirect for react-router to work
+0e99614 new prod build
+4509d89 Adding react router to control tabs with pathname in URL
+df252ea I think I figured out how to show the data on initial render! colorized G codes as well.
+9a7266e new prod build
+27d7e91 trying to get the tabs to display data no just on switch
+86f3f93 fixing tool offsets page rendering
+6f50666 new site build: tabs and styling
+5f3cace styling around and simplifying
+d89b466 styled tabs and wired the selection
+e13a8d7 new build with offsets page
+94d35e8 working on a toggle or tabs for what will have both pages
+e4c6d54 building offsets display table
+8cda93c slicing the registers more intelegently to separate the groupings
+1b9af78 created new MacroEnv class to house the inner workings separate from the MacroRuntime
+31bf96b bringing the macro tools into the site instead of relying on the standalone method
+312d7c8 prod build
+4754205 adding g10 lines to site examples
+a9b4719 adding built site to repo
+a9bfe02 onemore
+91abd67 absolute paths
+517fa01 typos
+e33c484 about to give up
+856827f fails on local, fails on remote
+d97b182 BUILD IT
+9a53a94 trying this out
+0d53256 fixing some refs
+cb53999 this might work
+8b6f5ea trying this
+595faf3 build please
+a2671ab trying anoooother thing
+017de10 trying anoother thing
+f3ba6bf testing new command
+982b574 trying another way...
+dd90fd8 build!
+2706a6d working on getting this repo netlify ready
+2c495a5 trying another stab at the netlify config
+311dbe8 trying netlify config
+b39a4f1 lets try this
+74cc0f5 adding push command
+c81ba6b fixing tsconfigs
+cae695d fixing some refs and publish path
+68c361d adding in the NcStat lib
+9123bcf fixing up references to the Macro lib, it works again!
+d23a532 adding more debug points
+2dc3c13 Hooking the MacroMemory into the interpreter to eval G10 lines!!!
+ae1fd13 fixing up insights and adding new collection class
+d8cb841 moving and fixing up tests
+d996504 adding casting methods for transforming MacroMemory
+847f48d fixing up demo for calculations
+0003066 integrating memory methods into variable get/set
+b43b6bb fixing up memory class
+d3155e5 fixing syntax for tests
+2428fab adding more tests for G10Line
+50602b4 adding first test for G10Line class
+97a1f99 adding debuggers to sprinkle about... tweaking some bits
+a0c1ff3 Reading string G10 lines works!!! variables are populating
+d2f2433 we can parse string g10 lines!
+2173afb fixing composer module to correctly map offsets
+31de507 what happened to my tests
+e861c09 moving tests
+6cfbdbb adding composer module with methods removed from MacroMemory class
+70957a3 utilizing jest-each for dynamic tests
+eef0553 adding each tests to g10 and MacroMemory
+3f4b311 G54 & G55 tests
+3e6f5c7 adding +53 to fix the memory set error
+28b2d99 tests for MacroMemory
+ea94cd0 continuing work on MacroMemory
+12c284c missed some files
+4c0e327 ok, I think I like these names, heh
+9a4ecc1 fixing the exports
+5499149 moving around some files
+def776f moving mappings into method
+7da73ab adding get/set methods for tools, Gxx getters for offset values
+086be33 fixing tool values assignment
+bd59e80 Building our MacroMemory class
+fc24b96 adding insights
+ba96eef Runtime no longer cycles and can load programs
+00c634b removing the task of extracting the program number from the parser for now
+fe2a220 lots of work
+241162d updating tests
+3e2cb74 Updating Deps
+2f37bfc adding an export
+31355a3 extracting more information through the interpreter
+5a8d217 gathering more line info
+7f5e75a updating types
+851dcf3 merging addresses into the contents of Line
+115f377 working on expanding the parser to understand the grammar more acurately
+f6feef5 adding events to runtime
+ad798cf interpreter now understands how to return the lines
+0135bbf tweaks
+4717171 adding methods for activating programs and pulling from memory
+cf8eee9 moving cli to apps/ and working on the runtime
+8c919cf we have the title!
+ddfe323 breaking apart utils. working on extracting program titles
+06a9191 adding script to generate syntax diagram
+684eea9 working on extracting the program number and title
+26f73d7 adding repl to interact with the runtime
+795f082 starting the runtime to be able to load multiple programs into memory
+ab126f5 adding logging to watch calculation steps
+bc78f22 profiling eslint with TIMING=1 and updating some things
+e696276 config updates
+a7fd5be working on tests and fleshing out the package
+659acbe overhaul for the types generator
+f41b461 renaming workspace folders in vscode
+ceab769 fixing pnpm commands
+1a4bf13 building too?
+b6e487d adding pnpm install action and trying again
+2a3c703 adding install command for pnpm
+c92b1df adding github actions
+9486205 adding top-level script commands
+3ddf876 adding script to start site from the root
+5100efb adding in configs
+09f0a7a merging in website history
+fd35d6e Add 'apps/website/' from commit 'c7a84cc409cf9f043db28c57614cc4b0ecc99e5c'
+c7a84cc removing non site stuff
+155e8be lets import all this into the monorepo
+2c6c7f8 initial import of packages
+a1ef2b8 working on simplifying the customizing
+e81a4b1 adding a method to watch variables
+113374f clearing the colors
+05698a0 first working colorizing of gcode!
+d6ee8c7 updating playground
+387f61e moving things and simplifying chrysalis
+25b1fcf working on customizer for monaco
+acc91cc creating chrysalis package to aid the customization of Monaco
+407fd1c adding some comments to the playground demo code
+fedc415 adding some function examples
+403c734 adding more styling
+1cb7794 Update README.md
+aad53b7 adding more styles and error display
+c4ef19b adding styling to macro outputs. bypassing rounding in the util method
+973e6cd adding some styling to the playground
+37749b4 trying some more things, cmon netlify
+0d90c27 removing parcel css to try and fix netlify deploy
+8235821 adding build command
+d670879 starting playground page to mess with interpreter
+d6f475f passing macros test with complex equations
+a0ea404 moving types files around and adding batch set for variables
+666de9e adding method to preload macros with values before eval
+cedcc8a IT WORKS! I found where to expand variable values on lookup
+ac270d9 types generation script
+5f6deb1 Merge branch 'main' of github.com:kevinkhill/fanuc-macro-b
+d0b4618 setting up variable demo
+6143ccd Update README.md
+42910cb adding exports and readme updates
+71ae753 macro variable lookup in evaluations not working as expected...
+81053de brackets are working and some pretty complex algebra! hooray!
+9f0fa30 first attempt at copying the logic from the calculator example
+7118975 updating the wording in the tests. added more trig functions. added another util method.
+6da7838 adding more test for functions
+c46a6c6 adding ABS and tests
+d8afc51 adding SQRT and tests
+242cbe7 formal tests for the basic trig functions
+b48785c renaming BuiltInFunctions and adding the starts of trig.
+ac60ccc basic algebra tests are passing!!!
+d008bd9 adding test for macros
+977b6f5 with borrowed code from the calculator example, my basic algebra works!!
+941c82f reading from macro variable registers works at a basic level
+c8d1ebb Variable assignments are starting to come together
+687a58f starting to work on the interpreter
+fb13e50 fixing up tests and typing a few things on the util methods
+a8c9835 whoops
+dc8252f renaming files
+3804a19 added custom token matcher to strip O from the program number token
+4c108b5 first working version that passes with expressions and macros
+53a845b CHURN because writing the DSL for the parser is harder than I thought
+d16bbc2 skip test
+5f78114 upgrading chevrotain and adding a script to generate the .d.ts
+5edc5c4 trying to simplify dir structure (still) and adding more tests
+8e36461 added first interpreter test
+bd5a0a0 clearing little files I don't like and adding another test
+ed9175c adding comments to RULE()s
+a80f88d fixing tests to use new Integer,Decimal tokens
+53db9d9 moving things again, and adding new tokens to help clarify NumberLiteral
+b310172 Adding more badges
+d1e3eef adding more tests
+4c81a68 Update README.md
+3882ee1 Update README.md
+505b1cc adding test badge
+dd60d7e trying out github workflow
+3f0aa6a moving tests and stuffs
+725898e testing lexer with custom token matcher
+52a6ba2 It works!
+03b069f I am starting to see how this works... some of my tokens might be too rich
+9b9f7eb moving things all around
+a555d4e initial import
+e326b08 Initial commit
