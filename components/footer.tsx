@@ -1,15 +1,11 @@
 import React from "react";
 
-import {
-  BLOG_GITHUB_URL,
-  MY_LINKEDIN_URL,
-  ORG_GITHUB_URL
-} from "../lib/constants";
+import { MY_LINKEDIN_URL, ORG_GITHUB_URL } from "../lib/constants";
 import Container from "./container";
 
 const Footer = () => {
   return (
-    <footer className="border-t bg-[#d495f1] border-purple-400">
+    <footer className="border-t border-purple-400 bg-pastel-purple">
       <Container>
         <div className="flex flex-col items-center py-28 lg:flex-row">
           <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
@@ -26,7 +22,7 @@ const Footer = () => {
               href={MY_LINKEDIN_URL}
               className="mx-3 font-bold hover:underline"
             >
-              Want to hire me? Visit my LinkedIn!
+              Want to Kevin? Visit his LinkedIn!
             </a>
           </div>
         </div>

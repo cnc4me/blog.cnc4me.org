@@ -8,7 +8,9 @@ type Props = {
   preview?: boolean;
 };
 
-const SourceAvailable = () => (
+const EmptyAlert = <></>;
+
+const SourceAvailable = (
   <>
     The source code for this blog is{" "}
     <a
@@ -21,7 +23,7 @@ const SourceAvailable = () => (
   </>
 );
 
-const PreviewMode = () => (
+const PreviewMode = (
   <>
     This page is a preview.{" "}
     <a
@@ -35,23 +37,17 @@ const PreviewMode = () => (
 );
 
 const Alert = ({ preview }: Props) => {
-  const showAlerts = false;
-
   return (
     <div
       className={cn("border-b", {
         "bg-neutral-800 border-neutral-800 text-white": preview,
-        "bg-purple-200 border-purple-600": !preview
+        "bg-pastel-purple border-purple-500": !preview
       })}
     >
       <Container>
-        {showAlerts ? (
-          <div className="py-2 text-sm text-center">
-            {preview ? <PreviewMode /> : <SourceAvailable />}
-          </div>
-        ) : (
-          <></>
-        )}
+        <div className="py-2 text-sm text-center">
+          {preview ? PreviewMode : EmptyAlert}
+        </div>
       </Container>
     </div>
   );

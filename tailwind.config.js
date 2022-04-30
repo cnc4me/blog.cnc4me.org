@@ -3,7 +3,11 @@ module.exports = {
   mode: "jit",
   content: ["./components/**/*.tsx", "./pages/**/*.tsx"],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        "pastel-purple": "#d495f1"
+      }
+    }
   },
   plugins: []
 };

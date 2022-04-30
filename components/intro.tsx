@@ -8,15 +8,15 @@ const Intro2 = () => {
       <h1 className="text-5xl font-bold leading-tight tracking-tighter md:text-6xl md:pr-8">
         {ORG_NAME} Blog
       </h1>
-      <h4 className="mt-5 text-lg text-center md:text-left md:pl-40">
-        Small stories about Programming, The{" "}
+      <h4 className="px-3 py-1 mt-5 text-lg text-center bg-purple-100 rounded-lg shadow-lg md:text-left md:ml-40">
+        Excerpts about Programming, The{" "}
         <a
           href={PLAYGROUND_URL}
           className="underline transition-colors duration-200 hover:text-blue-600"
         >
           Fanuc Macro Playground
         </a>
-        , and Bits of Knowledge from the Shop.
+        , and other Knowledge from the Shop.
       </h4>
     </section>
   );

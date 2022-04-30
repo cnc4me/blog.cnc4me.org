@@ -1,8 +1,8 @@
 ---
 title: "Matsuura Cell Manager Excel Automation"
 excerpt: "Learning Visual Basic to automate Excel and compare some CSV files."
-# coverImage: "/assets/blog/excel-automation/cover.jpg"
-coverImage: "https://placeimg.com/1000/500/arch"
+coverImage: "/assets/blog/excel-automation/cover.jpg"
+# coverImage: "https://placeimg.com/1000/500/arch"
 date: "2022-04-29T13:00:00.0Z"
 author:
   name: Kevin Hill
@@ -11,9 +11,9 @@ ogImage:
   url: "/assets/blog/excel-automation/cover.jpg"
 ---
 
-Prism Works!
+## Problem
 
-```visual-basic
+```vb
 '====================================================
 ' Script: compare.vbs
 ' Author: Kevin Hill
