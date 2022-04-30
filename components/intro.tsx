@@ -36,14 +36,14 @@ const Intro2 = () => {
         {ORG_NAME} Blog
       </h1>
       <h4 className="mt-5 text-lg text-center md:text-left md:pl-40">
-        Small excerpts about programming, whether the development of the{" "}
+        Small stories about programming, working on the{" "}
         <a
           href={PLAYGROUND_URL}
           className="underline transition-colors duration-200 hover:text-blue-600"
         >
-          Macro Playground
-        </a>{" "}
-        or sharing expert knowledge from the shop.
+          Fanuc Macro Playground
+        </a>
+        , or sharing bits of knowledge from the shop.
       </h4>
     </section>
   );
