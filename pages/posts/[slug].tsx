@@ -10,7 +10,7 @@ import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
 import PostTitle from "../../components/post-title";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
-import { ORG_NAME } from "../../lib/constants";
+import { FRONT_MATTER_FOR_POSTS } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import PostType from "../../types/post";
 
@@ -37,9 +37,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
           <>
             <article className="mb-32">
               <Head>
-                <title>
-                  {post.title} | Next.js Blog Example with {ORG_NAME}
-                </title>
+                <title>{post.title}</title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
               <PostHeader
@@ -48,7 +46,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
                 date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <PostBody tags={post.tags ?? []} content={post.content} />
             </article>
           </>
         )}
@@ -66,15 +64,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage"
-  ]);
+  const post = getPostBySlug(params.slug, FRONT_MATTER_FOR_POSTS);
   const content = await markdownToHtml(post.content || "");
 
   return {

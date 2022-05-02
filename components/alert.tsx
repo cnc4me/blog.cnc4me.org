@@ -41,7 +41,7 @@ const Alert = ({ preview }: Props) => {
     <div
       className={cn("border-b", {
         "bg-neutral-800 border-neutral-800 text-white": preview,
-        "bg-pastel-purple border-purple-500": !preview
+        "bg-fuchsia-900/50 border-fuchsia-800": !preview
       })}
     >
       <Container>

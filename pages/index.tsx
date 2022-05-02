@@ -7,8 +7,8 @@ import Intro from "../components/intro";
 import Layout from "../components/layout";
 import MoreStories from "../components/more-stories";
 import { getAllPosts } from "../lib/api";
-import { ORG_NAME } from "../lib/constants";
-import Post from "../types/post";
+import { FRONT_MATTER_FOR_PAGES, ORG_NAME } from "../lib/constants";
+import type Post from "../types/post";
 
 type Props = {
   allPosts: Post[];
@@ -46,14 +46,7 @@ const Index = ({ allPosts }: Props) => {
 export default Index;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt"
-  ]);
+  const allPosts = getAllPosts(FRONT_MATTER_FOR_PAGES);
 
   return {
     props: { allPosts }

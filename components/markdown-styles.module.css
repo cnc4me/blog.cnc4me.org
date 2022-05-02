@@ -1,5 +1,9 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply px-4 py-2 text-lg leading-relaxed;
+}
+
+.markdown p:first-child {
+  @apply m-0;
 }
 
 .markdown p,
@@ -7,6 +11,10 @@
 .markdown ol,
 .markdown blockquote {
   @apply my-6;
+}
+
+.markdown ol {
+  @apply ml-8 list-decimal;
 }
 
 .markdown h2 {
