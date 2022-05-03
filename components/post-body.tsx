@@ -23,12 +23,12 @@ const PostBody = ({ content, tags }: Props) => {
           {tags.map(tag => {
             return (
               <span className="pb-3 pr-2" key={tag}>
-                <a
+                <Link
                   className="underline transition-colors duration-200 hover:text-blue-600"
                   href={`/tags/${tag}`}
                 >
                   #{tag}
-                </a>
+                </Link>
               </span>
             );
           })}

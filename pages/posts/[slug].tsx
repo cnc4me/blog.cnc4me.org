@@ -11,7 +11,7 @@ import PostHeader from "../../components/post-header";
 import PostTitle from "../../components/post-title";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
 import { FRONT_MATTER_FOR_POSTS } from "../../lib/constants";
-import markdownToHtml from "../../lib/markdownToHtml";
+import { markdownToHtml } from "../../lib/markdownToHtml";
 import PostType from "../../types/post";
 
 type Props = {

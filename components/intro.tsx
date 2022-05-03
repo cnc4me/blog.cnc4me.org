@@ -15,8 +15,8 @@ const Intro2 = () => {
           className="underline transition-colors duration-200 hover:text-blue-600"
         >
           Macro Playground
-        </a>{" "}
-        , and other insights into the programmer machinist.
+        </a>
+        , and other insights from the Programmer-Machinist.
       </h4>
     </section>
   );

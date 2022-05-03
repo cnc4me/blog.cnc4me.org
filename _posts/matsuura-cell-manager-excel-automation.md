@@ -39,61 +39,122 @@ After a few hours of trial and error, I learned enough to create the following s
 ## The Script
 
 ```vb
-'====================================================
-' Script: compare.vbs
+'======================================================
+' Script: tool_compare.vbs
 ' Author: Kevin Hill
-' Created: 4/28/22
-' Usage:
+' Created: 5/2/22
+' Version: 3
+'
+' Description:
 '   This script can compare the exported contents
 '   of a machines' tool list against to the extracted
 '   tool list of a program.
-'====================================================
-MachineNumber = 1
-
-Function CompareSheets(ByRef strProgramPath)
-  Dim strToolDataPath, idxMatch
-  Dim mToolBook, pToolBook, mToolSheet, pToolSheet
-
-  strToolDataPath = "C:\ToolData_MC" & MachineNumber & ".csv"
-
-  Set Excel = Wscript.CreateObject("Excel.Application")
-  Set mToolBook = Excel.Workbooks.Open(strToolDataPath)
-  Set pToolBook = Excel.Workbooks.Open(strProgramPath)
-  Set mToolSheet = mToolBook.Worksheets(1)
-  Set pToolSheet = pToolBook.Worksheets(1)
-
-  Excel.visible = True
-  
-  idxMatch = Excel.Application.Match(r.Columns(1).Value, mToolSheet.Columns(2), 0)
-  
-  For Each r In pToolSheet.UsedRange.Rows
-    If IsNumeric(idxMatch) Then
-      r.Columns(2).Value = "P" & mToolSheet.Cells(idxMatch, 1).Value
-    Else
-      r.Columns(2).Value = "Missing"
-      r.Font.ColorIndex = 3
-    End If
-  Next
-
-  'Style the Results
-  pToolSheet.Rows(1).Insert(Shift=xlShiftDown)
-  pToolSheet.Cells(1,1).Value = "MACHINE " & MachineNumber
-  pToolSheet.Cells(1,1).Font.Bold = True
-End Function
-
-
-'====================================================
+'
 ' Usage:
 '  Drag and drop a "Onnnn_tool.csv" extraction file
 '  onto this script to run the comparison.
-'====================================================
-StrPath = ""
+'
+'======================================================
+strToolListMaster = "C:\Share\TOOL LIST.xls"
+strMasterToolBookSheetName = "TOOL LIST"
 
-For Each s In Wscript.Arguments
-  StrPath = StrPath & s
-Next
+strToolListM1 = "C:\ToolData_MC1.csv"
+strToolListM2 = "C:\ToolData_MC2.csv"
 
-CompareSheets(StrPath)
+strNotFoundValue = "N/A"
+intNotFoundColorIndex = 3
+
+Function Main()
+  StrPath = ""
+
+  'Gather everything on the command line into a string
+  For Each s In Wscript.Arguments
+    StrPath = StrPath & s
+  Next
+
+  CompareSheets(StrPath)
+End Function
+
+Function CompareSheets(ByRef strProgramPath)
+  Dim strToolDescription, strCurColumnValue, idxToolLookupMatch, idxMatchResult
+  Set Excel = Wscript.CreateObject("Excel.Application")
+
+  Set bookToolMaster = Excel.Workbooks.Open(strToolListMaster)
+  Set bookToolM1 = Excel.Workbooks.Open(strToolListM1)
+  Set bookToolM2 = Excel.Workbooks.Open(strToolListM2)
+  Set bookToolProgram = Excel.Workbooks.Open(strProgramPath)
+
+  'Create a reference to the master tool list worksheet
+  Set sheetToolMaster = bookToolMaster.Worksheets(strMasterToolBookSheetName)
+
+  'Create a reference to the machines' tool list worksheets
+  Set sheetToolM1 = bookToolM1.Worksheets(1)
+  Set sheetToolM2 = bookToolM2.Worksheets(1)
+
+  'Create a reference to the program tool list worksheet
+  Set sheetToolProgram = bookToolProgram.Worksheets(1)
+
+  'Get the second column from the machines' exported tool list
+  Set cToolColM1 = sheetToolM1.Columns(2)
+  Set cToolColM2 = sheetToolM2.Columns(2)
+
+  'Get the tool number column from the master sheet
+  Set rToolMasterDataRange = sheetToolMaster.Range("A4:G2000")
+
+  'Now that the sheets are ready, make excel visible to the user
+  Excel.visible = True
+
+  'For each row found in the program sheet
+  For Each r In sheetToolProgram.UsedRange.Rows
+    'Get the cell value
+    strCurColumnValue = r.Columns(1).Value
+
+    'Search for the tool number in the column from M1
+    idxMatchResult = Excel.Application.Match(strCurColumnValue, cToolColM1, 0)
+
+    'If a match was found
+    If IsNumeric(idxMatchResult) Then
+      r.Columns(2).Value = "P" & sheetToolM1.Cells(idxMatchResult, 1).Value
+    Else
+      r.Columns(2).Value = strNotFoundValue
+      r.Columns(2).Font.ColorIndex = intNotFoundColorIndex
+    End If
+
+    'Search for the tool number in the column from M2
+    idxMatchResult = Excel.Application.Match(strCurColumnValue, cToolColM2, 0)
+ 
+    'If a match was found
+    If IsNumeric(idxMatchResult) Then
+      r.Columns(3).Value = "P" & sheetToolM2.Cells(idxMatchResult, 1).Value
+    Else
+      r.Columns(3).Value = strNotFoundValue
+      r.Columns(3).Font.ColorIndex = intNotFoundColorIndex
+    End If
+
+    'strip the `T` so we have just the number
+    strCurColumnValue = Replace(strCurColumnValue, "T", "")
+
+    'Search for the tool number in the master sheet
+    strToolDescription = Excel.Application.Vlookup(CInt(strCurColumnValue), rToolMasterDataRange, 7)
+  
+    r.Columns(4).Value = strToolDescription
+  
+  'Itterate to the next row in the program tool list
+  Next
+
+  'Insert a new row at the top, shifting everything down
+  sheetToolProgram.Rows(1).Insert(Shift=xlShiftDown)
+
+  'Write and bold the machine that was searched into the top row
+  sheetToolProgram.Rows(1).Font.Bold = True
+  sheetToolProgram.Cells(1,1).Value = "TOOL"
+  sheetToolProgram.Cells(1,2).Value = "M1"
+  sheetToolProgram.Cells(1,3).Value = "M2"
+  sheetToolProgram.Cells(1,4).Value = "DESCRIPTION"
+End Function
+
+'Run the Program
+Main()
 ```
 
 Now we know that Excel is not just a great tool for data and charts, but we can also use it for automation of processing as well. This is great knowledge to have for future problems that could use a bit of scripting. I find this so valuable, that it finally got me to create this blog and share it with everyone.
