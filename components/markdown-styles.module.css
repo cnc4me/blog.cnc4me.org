@@ -6,6 +6,10 @@
   @apply m-0;
 }
 
+.markdown p code {
+  @apply bg-violet-200 px-1 rounded;
+}
+
 .markdown p,
 .markdown ul,
 .markdown ol,

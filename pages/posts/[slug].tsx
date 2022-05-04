@@ -8,9 +8,10 @@ import Header from "../../components/header";
 import Layout from "../../components/layout";
 import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
+import PostTags from "../../components/post-tags";
 import PostTitle from "../../components/post-title";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
-import { FRONT_MATTER_FOR_POSTS } from "../../lib/constants";
+import { FRONT_MATTER_FOR_POSTS, ORG_NAME } from "../../lib/constants";
 import { markdownToHtml } from "../../lib/markdownToHtml";
 import PostType from "../../types/post";
 
@@ -37,7 +38,9 @@ const Post = ({ post, morePosts, preview }: Props) => {
           <>
             <article className="mb-32">
               <Head>
-                <title>{post.title}</title>
+                <title>
+                  {ORG_NAME} | {post.title}
+                </title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
               <PostHeader
@@ -46,7 +49,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
                 date={post.date}
                 author={post.author}
               />
-              <PostBody tags={post.tags ?? []} content={post.content} />
+              <PostBody content={post.content} tags={post.tags ?? []} />
             </article>
           </>
         )}

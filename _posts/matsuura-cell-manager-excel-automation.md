@@ -1,6 +1,6 @@
 ---
 title: "Matsuura Cell Manager Excel Automation"
-excerpt: "Setting up a CNC machine requires reading a setupbook or program notes to get a list of tools required to run a program. To setup a job, is to first see if the program has a tool list. If so, great, if not, the Cell Manager can read a program and extract a `Onnnn_tools.csv` file. This is what the operators would print, and bring to the machine and compare against the currently loaded tools."
+excerpt: "Setting up a CNC machine requires reading a setupbook or program notes to get a list of tools required to run a program. To setup a job, is to first see if the program has a tool list. If so, great, if not, the Cell Manager can read a program and extract a ```Onnnn_tools.csv``` file. This is what the operators would print, and bring to the machine and compare against the currently loaded tools."
 date: "2022-04-29T13:00:00.0Z"
 author:
   name: Kevin Hill
@@ -11,11 +11,11 @@ ogImage:
 tags:
  - vba
  - excel
- - scripting
+ - automation
 ---
 ## The Problem
 
-Setting up a CNC machine requires reading a setupbook or program notes to get a list of tools required to run a program. To setup a job, is to first see if the program has a tool list. If so, great, if not, the Cell Manager can read a program and extract a `Onnnn_tools.csv` file. This is what the operators would print, and bring to the machine and compare against the currently loaded tools.
+Setting up a CNC machine requires reading a setupbook or program notes to get a list of tools required to run a program. To setup a job, is to first see if the program has a tool list. If so, great, if not, the Cell Manager can read a program and extract a ```Onnnn_tools.csv``` file. This is what the operators would print, and bring to the machine and compare against the currently loaded tools.
 
 When I encounter this sort of repetitive task I, can't help but think about how to make it more efficient...
 
@@ -23,7 +23,7 @@ My idea is to use the Cell Manager (CM) to do the work for us. We have one piece
 
 [![Screenshot of Matsuura Cell Manager exporting steps](/assets/blog/excel-automation/step1.jpg)](/assets/blog/excel-automation/step1.jpg)
 
-Now we have to save this file to disk, so, on the C root is fine. This process needs to be repeated for both of my machines, to get the two machine tool lists I need.
+This process needs to be repeated for both machines, to get the tool list exports I need.
 
 [![Screenshot of Matsuura Cell Manager exporting steps](/assets/blog/excel-automation/step2.jpg)](/assets/blog/excel-automation/step2.jpg)
 
@@ -32,9 +32,9 @@ With our two `csv` files, we can definitely automate the comparison of these. I 
  1. The Cell Manager runs Windows XP with 2GB of ram.
  2. Per management, I am not allowed to install anything.
 
-So my ideas started with a batch script since I know that is available on all windows. I did check for powershell first, but no luck. It seemed like doing csv/text processing in `cmd.exe` would be a chore so I quickly moved on. I found out that you can automate Excel with macros, and also, Visual Basic!! This is perfect, if we can just use Excel, the tool we already, then we are gold. I've never wrote VisualBasic but I love to learn, so lets go.
+So my ideas started with a batch script since I know that is available on all windows. I did check for powershell first, but no luck. It seemed like doing csv/text processing in `cmd.exe` would be a chore so I quickly moved on. I found out that you can automate Excel with macros, and also, Visual Basic!! This is perfect, if we can just use Excel, the tool we already have, then we are gold. I've never wrote VisualBasic but I love to learn, so lets go.
 
-After a few hours of trial and error, I learned enough to create the following script, which automates the comparison of the two csv files. Lucky for me there was already a great example on Microsoft's website that I copied.  
+After a few hours of trial and error, I learned enough to create the following script, which automates the comparison of the two csv files. Lucky for me there was a complete example on Microsoft's website that I copied. The first version only compared one machine, but I was able to open both machine files, and our Master Tool List for a complete tool listing.  
 
 ## The Script
 
