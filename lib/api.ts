@@ -15,11 +15,7 @@ export function getPostBySlug(slug: string, fields: string[] = []): PostType {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  type Items = {
-    [key: string]: string;
-  };
-
-  const items: Items = {};
+  const items: Partial<PostType> & Record<string, string> = {};
 
   // Ensure only the minimal needed data is exposed
   fields.forEach(field => {
@@ -32,29 +28,29 @@ export function getPostBySlug(slug: string, fields: string[] = []): PostType {
     }
 
     if (typeof data[field] !== "undefined") {
-      console.log(field, data[field]);
-
       items[field] = data[field];
     }
   });
-
-  return items as unknown as PostType;
+  console.log(items);
+  return items as PostType;
 }
 
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
+  console.log(slugs);
+
   const posts = slugs
     .map(slug => getPostBySlug(slug, fields))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 
+  console.log(posts);
   return posts;
 }
 
 export function getAllTags() {
   const posts = getAllPosts();
   const tags = new Set<string>();
-
   posts.forEach(post => {
     post?.tags?.forEach(tag => tags.add(tag));
   });
