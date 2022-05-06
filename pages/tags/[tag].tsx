@@ -6,7 +6,7 @@ import React from "react";
 import Container from "../../components/container";
 import Header from "../../components/header";
 import Layout from "../../components/layout";
-import { getAllTags } from "../../lib/api";
+import { postRepo } from "../../lib/api";
 import { ORG_NAME } from "../../lib/constants";
 
 type Props = {
@@ -61,7 +61,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const tags = getAllTags();
+  const tags = postRepo.getAllTags();
   // const tags = ["excel"];
 
   return {

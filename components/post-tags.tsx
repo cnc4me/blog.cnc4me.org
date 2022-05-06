@@ -5,7 +5,7 @@ type Props = {
   tags: string[];
 };
 
-const PostTags = ({ tags }: Props) => {
+const PostTags: React.FC<Props> = ({ tags }) => {
   tags = [];
 
   return (

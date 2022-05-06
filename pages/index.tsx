@@ -6,7 +6,7 @@ import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
 import MoreStories from "../components/more-stories";
-import { getAllPosts } from "../lib/api";
+import { postRepo } from "../lib/api";
 import { FRONT_MATTER_FOR_PAGES, ORG_NAME } from "../lib/constants";
 import type Post from "../types/post";
 
@@ -46,7 +46,7 @@ const Index = ({ allPosts }: Props) => {
 export default Index;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts(FRONT_MATTER_FOR_PAGES);
+  const allPosts = postRepo.getAllPosts(FRONT_MATTER_FOR_PAGES);
 
   return {
     props: { allPosts }

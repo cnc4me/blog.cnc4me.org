@@ -4,7 +4,7 @@ import React from "react";
 
 import Container from "../../components/container";
 import Layout from "../../components/layout";
-import { getAllTags } from "../../lib/api";
+import { postRepo } from "../../lib/api";
 import { ORG_NAME } from "../../lib/constants";
 
 type Props = {
@@ -35,7 +35,7 @@ const Index = ({ allTags }: Props) => {
 export default Index;
 
 export const getStaticProps = async () => {
-  const allTags = getAllTags();
+  const allTags = postRepo.getAllTags();
 
   return {
     props: { allTags }

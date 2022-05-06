@@ -8,10 +8,9 @@ import Header from "../../components/header";
 import Layout from "../../components/layout";
 import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
-import PostTags from "../../components/post-tags";
 import PostTitle from "../../components/post-title";
-import { getAllPosts, getPostBySlug } from "../../lib/api";
-import { FRONT_MATTER_FOR_POSTS, ORG_NAME } from "../../lib/constants";
+import { postRepo } from "../../lib/api";
+import { ORG_NAME } from "../../lib/constants";
 import { markdownToHtml } from "../../lib/markdownToHtml";
 import PostType from "../../types/post";
 
@@ -67,7 +66,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, FRONT_MATTER_FOR_POSTS);
+  const post = postRepo.getPostBySlug(params.slug);
   const content = await markdownToHtml(post.content || "");
 
   return {
@@ -81,7 +80,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
+  const posts = postRepo.getAllPosts(["slug"]);
 
   return {
     paths: posts.map(post => {
