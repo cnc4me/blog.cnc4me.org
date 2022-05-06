@@ -16,7 +16,7 @@ const PostBody = ({ content, tags }: Props) => {
         className={markdownStyles["markdown"]}
         dangerouslySetInnerHTML={{ __html: content }}
       />
-      <PostTags tags={tags} />
+      <PostTags tags={tags ?? []} />
     </div>
   );
 };

@@ -6,27 +6,20 @@ type Props = {
 };
 
 const PostTags: React.FC<Props> = ({ tags }) => {
-  tags = [];
-
   return (
-    <>
-      {tags.length > 0 && (
-        <div className="flex justify-end pr-2">
-          <span className="pb-3 pr-2">Tags:</span>
-          {tags.map(tag => {
-            return (
-              <span className="pb-3 pr-2" key={tag}>
-                <Link href={`/tags/${tag}`}>
-                  <a className="underline transition-colors duration-200 hover:text-blue-600">
-                    #{tag}
-                  </a>
-                </Link>
-              </span>
-            );
-          })}
-        </div>
-      )}
-    </>
+    <div className="flex justify-center gap-2 pb-5">
+      {tags.map(tag => {
+        return (
+          <span className="pr-3" key={tag}>
+            <Link href={`/tags/${tag}`}>
+              <a className="font-bold uppercase transition-colors duration-200 hover:text-violet-600">
+                #{tag}
+              </a>
+            </Link>
+          </span>
+        );
+      })}
+    </div>
   );
 };
 
