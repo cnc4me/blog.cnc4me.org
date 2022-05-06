@@ -5,6 +5,7 @@ import Avatar from "./avatar";
 import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
 import PostTitle from "./post-title";
+import postStyles from "./styles/posts.module.css";
 
 type Props = {
   title: string;
@@ -27,7 +28,7 @@ const PostHeader = ({ title, coverImage, date, author }: Props) => {
         <div className="block mb-6 md:hidden">
           <Avatar name={author.name} picture={author.picture} />
         </div>
-        <div className="py-2 pl-4 text-xl bg-purple-200 border-b shadow-xl border-b-purple-300 rounded-t-md">
+        <div className={postStyles["dateFormatter"]}>
           <DateFormatter dateString={date} />
         </div>
       </div>

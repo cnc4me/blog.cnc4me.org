@@ -7,22 +7,22 @@ import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
 
 type Props = {
-  title: string;
-  coverImage: string;
   date: string;
-  excerpt: string;
-  author: Author;
   slug: string;
+  title: string;
+  author: Author;
+  excerpt: string;
+  coverImage: string;
 };
 
-const PostPreview = ({
+const PostPreview: React.FC<Props> = ({
   title,
   coverImage,
   date,
   excerpt,
   author,
   slug
-}: Props) => {
+}) => {
   return (
     <div>
       <div className="mb-5">

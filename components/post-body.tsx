@@ -1,16 +1,17 @@
 import React from "react";
 
-import markdownStyles from "./markdown-styles.module.css";
 import PostFooter from "./post-footer";
+import markdownStyles from "./styles/markdown.module.css";
+import postStyles from "./styles/posts.module.css";
 
 type Props = {
   tags: string[];
   content: string;
 };
 
-const PostBody = ({ content, tags }: Props) => {
+const PostBody: React.FC<Props> = ({ content, tags }) => {
   return (
-    <div className="max-w-3xl mx-auto rounded-b-md bg-purple-50">
+    <div className={postStyles["bodyContainer"]}>
       <div
         className={markdownStyles["markdown"]}
         dangerouslySetInnerHTML={{ __html: content }}

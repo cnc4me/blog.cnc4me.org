@@ -22,7 +22,9 @@ const Footer = () => {
               href={MY_LINKEDIN_URL}
               className="mx-3 font-bold hover:underline"
             >
-              Want to Hire Kevin? Visit his LinkedIn!
+              Want to Hire Me?
+              <br />
+              Visit My LinkedIn
             </a>
           </div>
         </div>
