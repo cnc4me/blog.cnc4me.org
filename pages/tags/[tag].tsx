@@ -62,7 +62,6 @@ export async function getStaticProps({ params }: Params) {
 
 export async function getStaticPaths() {
   const tags = postRepo.getAllTags();
-  // const tags = ["excel"];
 
   return {
     paths: tags.map(tag => {

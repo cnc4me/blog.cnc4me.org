@@ -5,9 +5,9 @@ type Props = {
   tags: string[];
 };
 
-const PostTags: React.FC<Props> = ({ tags }) => {
+const PostFooter: React.FC<Props> = ({ tags }) => {
   return (
-    <div className="flex justify-center gap-2 pb-5">
+    <div className="flex justify-center gap-2 py-4 align-middle bg-purple-200 border-t shadow-xl border-t-purple-300 rounded-b-md">
       {tags.map(tag => {
         return (
           <span className="pr-3" key={tag}>
@@ -23,4 +23,4 @@ const PostTags: React.FC<Props> = ({ tags }) => {
   );
 };
 
-export default PostTags;
+export default PostFooter;

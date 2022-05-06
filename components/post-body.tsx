@@ -1,8 +1,7 @@
-import Link from "next/link";
 import React from "react";
 
 import markdownStyles from "./markdown-styles.module.css";
-import PostTags from "./post-tags";
+import PostFooter from "./post-footer";
 
 type Props = {
   tags: string[];
@@ -16,7 +15,7 @@ const PostBody = ({ content, tags }: Props) => {
         className={markdownStyles["markdown"]}
         dangerouslySetInnerHTML={{ __html: content }}
       />
-      <PostTags tags={tags ?? []} />
+      <PostFooter tags={tags ?? []} />
     </div>
   );
 };
