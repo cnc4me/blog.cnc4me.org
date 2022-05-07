@@ -1,7 +1,6 @@
 import cn from "classnames";
 import React from "react";
 
-import { BLOG_GITHUB_URL } from "../lib/constants";
 import Container from "./container";
 
 type Props = {
@@ -9,19 +8,6 @@ type Props = {
 };
 
 const EmptyAlert = <></>;
-
-const SourceAvailable = (
-  <>
-    The source code for this blog is{" "}
-    <a
-      href={BLOG_GITHUB_URL}
-      className="underline transition-colors duration-200 hover:text-violet-700"
-    >
-      available on GitHub
-    </a>
-    .
-  </>
-);
 
 const PreviewMode = (
   <>

@@ -20,6 +20,7 @@ type Props = {
   preview?: boolean;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Post = ({ post, morePosts, preview }: Props) => {
   const router = useRouter();
 
