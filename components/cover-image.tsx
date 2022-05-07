@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import cn from "classnames";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,9 +10,9 @@ type Props = {
   slug?: string;
 };
 
-const CoverImage = ({ title, src, slug }: Props) => {
+const CoverImage: React.FC<Props> = ({ title, src, slug }) => {
   const image = (
-    <Image
+    <img
       src={src}
       alt={`Cover Image for ${title}`}
       className={cn("rounded-lg border border-purple-300 shadow-sm", {
@@ -19,6 +20,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
       })}
     />
   );
+
   return (
     <div className="sm:mx-0">
       {slug ? (
