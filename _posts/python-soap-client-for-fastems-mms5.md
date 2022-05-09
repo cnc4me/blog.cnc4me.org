@@ -181,4 +181,12 @@ class OrderService(services.FastemsService):
 
 ## Conclusion
 
-I am very happy with how the code works and how all my service classes are generated for me. Automation is key so we can generate the building blocks and free up our time to build bigger and better things. The repository is available
+I am very happy with how the code works and how all my service classes are generated for me. Automation is key so we can generate the building blocks and free up our time to build bigger and better things. The repository is [available here](https://github.com/cnc4me/python-soap-client) if you want to look through the source.
+`
+ - - -
+
+The following video is me running [this script](https://github.com/cnc4me/python-soap-client/blob/main/create-orders-from-schedule.py) against the FASTEMS backend as a proof of concept video for management.
+
+<video controls width="100%">
+  <source src="/assets/blog/python-soap-client/demo.m4v" />
+</video>
