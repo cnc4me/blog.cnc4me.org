@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
 
-import Author from "../types/author";
+import { getAuthor } from "../lib/getAuthor";
+import PostType from "../types/post";
 import Avatar from "./avatar";
 import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
@@ -11,7 +12,7 @@ type Props = {
   coverImage: string;
   date: string;
   excerpt: string;
-  author: Author;
+  author: PostType["author"];
   slug: string;
 };
 
@@ -23,6 +24,8 @@ const HeroPost = ({
   author,
   slug
 }: Props) => {
+  const { name, picture } = getAuthor(author);
+
   return (
     <section>
       <div className="mb-8 md:mb-16">
@@ -41,7 +44,7 @@ const HeroPost = ({
         </div>
         <div>
           <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
-          <Avatar name={author.name} picture={author.picture} />
+          <Avatar name={name} picture={picture} />
         </div>
       </div>
     </section>

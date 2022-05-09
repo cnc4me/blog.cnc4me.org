@@ -1,7 +1,9 @@
 import Link from "next/link";
 import React from "react";
 
+import { getAuthor } from "../lib/getAuthor";
 import Author from "../types/author";
+import PostType from "../types/post";
 import Avatar from "./avatar";
 import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
@@ -10,7 +12,7 @@ type Props = {
   date: string;
   slug: string;
   title: string;
-  author: Author;
+  author: PostType["author"];
   excerpt: string;
   coverImage: string;
 };
@@ -23,6 +25,8 @@ const PostPreview: React.FC<Props> = ({
   author,
   slug
 }) => {
+  const { name, picture } = getAuthor(author);
+
   return (
     <div>
       <div className="mb-5">
@@ -37,7 +41,7 @@ const PostPreview: React.FC<Props> = ({
         <DateFormatter dateString={date} />
       </div>
       <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
+      <Avatar name={name} picture={picture} />
     </div>
   );
 };

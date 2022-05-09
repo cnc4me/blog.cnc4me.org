@@ -6,7 +6,7 @@ type PostType = {
   date: string;
   tags?: string[];
   coverImage: string;
-  author: Author;
+  author: string | Author;
   excerpt: string;
   ogImage: {
     url: string;

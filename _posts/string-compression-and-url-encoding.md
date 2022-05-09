@@ -34,5 +34,8 @@ I need to see the source, I need to know, and I am happy to be an open source de
 
 ### Step 3 - Research
 
-Since this is a webapp, our first logical search will be on NPM and it brings up the package [lz-string](https://www.npmjs.com/package/lz-string) by [pieroxy](http://pieroxy.net/blog/pages/lz-string/index.html). So here we have it, they are taking the contents of the editor, running through this compression library, and appending it to the URL. I thought this might be complicated, but it seems pretty straight forward. I just need to make a similiar implementation for my site, using this library.
+Since this is a webapp, our first logical search will be on NPM and it brings up the package [lz-string](https://www.npmjs.com/package/lz-string) by [pieroxy](http://pieroxy.net/blog/pages/lz-string/index.html). So here we have it, they are taking the contents of the editor, running through this compression library, and appending it to the URL. I thought this might be complicated, but it seems pretty straight forward. Next step, just need to make a similiar implementation for my site, using this library.
 
+### Step 4 - Implementation
+
+Since I am using [this fantastic wrapper library](https://www.npmjs.com/package/@monaco-editor/react) around the Monaco editor, it seemed like using the `onChange` andn `onMount` methods would make sense for our logic.

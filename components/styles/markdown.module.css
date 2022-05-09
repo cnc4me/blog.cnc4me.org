@@ -14,6 +14,11 @@
   @apply underline transition-colors duration-200 hover:text-violet-600
 }
 
+.markdown img,
+.markdown div.remark-highlight pre {
+  @apply mx-auto rounded-md shadow-lg shadow-neutral-400 
+} 
+
 .markdown p,
 .markdown ul,
 .markdown ol,
