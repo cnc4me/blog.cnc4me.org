@@ -1,6 +1,6 @@
 ---
 title: "Matsuura Cell Manager Excel Automation"
-excerpt: "Setting up a CNC machine requires reading a setupbook or program notes to get a list of tools required to run a program. To setup a job, is to first see if the program has a tool list. If so, great, if not, the Cell Manager can read a program and extract a ```Onnnn_tools.csv``` file. This is what the operators would print, and bring to the machine and compare against the currently loaded tools."
+excerpt: "Setting up a CNC machine requires reading a setupbook or program notes to get a list of tools required to run a program. To setup a job, is to first see if the program has a tool list. If so, great, if not, the Cell Manager can read a program and extract a 'Onnnn_tools.csv' file. This is what the operators would print, and bring to the machine and compare against the currently loaded tools."
 date: "2022-04-29T13:00:00.0Z"
 author:
   name: Kevin Hill
@@ -15,7 +15,7 @@ tags:
 ---
 ## The Problem
 
-Setting up a CNC machine requires reading a setupbook or program notes to get a list of tools required to run a program. To setup a job, is to first see if the program has a tool list. If so, great, if not, the Cell Manager can read a program and extract a ```Onnnn_tools.csv``` file. This is what the operators would print, and bring to the machine and compare against the currently loaded tools.
+Setting up a CNC machine requires reading a setupbook or program notes to get a list of tools required to run a program. To setup a job, is to first see if the program has a tool list. If so, great, if not, the Cell Manager can read a program and extract a `Onnnn_tools.csv` file. This is what the operators would print, and bring to the machine and compare against the currently loaded tools.
 
 When I encounter this sort of repetitive task I, can't help but think about how to make it more efficient...
 
