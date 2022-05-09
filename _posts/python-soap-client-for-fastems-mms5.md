@@ -68,7 +68,7 @@ def build_client(service) -> (Client, HistoryPlugin):
   return Client(wsd_uri, transport=transport, plugins=plugins), history
 ```
 
-Then we add a method to request the `WSDL` of the given service endpoint, parse the output, and generate some method definitions for a service class I want to make.
+Then we add a method to request the `WSDL` of the given service endpoint, parse the output, and generate some method definitions for a service class.
 
 ```python
 def generate_methods(service):
@@ -103,7 +103,7 @@ def generate_methods(service):
   return methods
 ```
 
-Now that we have all the endpoint and arguments, we can create classes to map onto each one, and provide me with a rich collection of API tethered classes with corresponding methods. So, lets use some templates, and write it all out to our project for comsumption.
+Now that we have all the endpoints and arguments, we can create classes to map onto each one, and provide a rich collection of classes with API endpoints bound to corresponding methods. So, lets use some templates, and write it all out to our project for comsumption.
 
 ```python
 def generate_class_files():
@@ -133,7 +133,7 @@ def generate_class_files():
     print('Done!\n')
 ```
 
-Running this script produced a set of [18 class files](https://github.com/cnc4me/python-soap-client/tree/main/fastems/services) with fully defined endpoint, all similiar looking to the following. This was a huge win for me!
+Running this script produced a set of [18 class files](https://github.com/cnc4me/python-soap-client/tree/main/fastems/services) with fully defined members, all similiar looking to the following. This was a huge win for me!
 
 ```python
 from fastems import services
