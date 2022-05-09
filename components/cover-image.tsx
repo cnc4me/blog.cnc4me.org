@@ -15,7 +15,7 @@ const CoverImage: React.FC<Props> = ({ title, src, slug }) => {
     <img
       src={src}
       alt={`Cover Image for ${title}`}
-      className={cn("rounded-lg border border-purple-300 shadow-sm", {
+      className={cn("rounded-lg border border-purple-900 shadow-sm", {
         "hover:shadow-lg transition-shadow duration-200": slug
       })}
     />
