@@ -26,7 +26,7 @@ const PostHeader = ({ title, coverImage, date, author }: Props) => {
       <div className="flex justify-center mb-8 md:mb-16 sm:mx-0">
         <CoverImage title={title} src={coverImage} />
       </div>
-      <div className="max-w-3xl mx-auto">
+      <div className={postStyles["headerContainer"]}>
         <div className="block mb-6 md:hidden">{avatar}</div>
         <div className={postStyles["dateFormatter"]}>
           <DateFormatter dateString={date} />

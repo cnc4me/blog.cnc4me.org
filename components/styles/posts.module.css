@@ -6,8 +6,12 @@
   @apply py-2 pl-4 text-xl bg-purple-200 border-b shadow-xl border-b-purple-300 rounded-t-md
 }
 
+.headerContainer {
+  @apply max-w-3xl mx-auto lg:max-w-5xl
+}
+
 .bodyContainer {
-  @apply max-w-3xl mx-auto rounded-b-md bg-purple-50
+  @apply max-w-3xl mx-auto lg:max-w-5xl rounded-b-md bg-purple-50
 }
 
 .footerContainer {
