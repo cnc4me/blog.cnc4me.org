@@ -16,7 +16,7 @@ const Intro2 = () => {
         >
           Macro Playground
         </a>
-        , and other insights from the Programmer-Machinist.
+        , and other insights from the Programmer / Machinist.
       </h4>
     </section>
   );
