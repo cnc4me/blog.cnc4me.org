@@ -13,11 +13,11 @@ tags:
 ---
 ## Background
 
-Here is a little background before the technical. I used to program and run a horizontal machining cell constiting of two identical Matsuura H+405s and a crane operated, 24 pallet storage container. This container system is designed by FASTEMS and it is an add-on type, third party system. Besides physically loading the machine, the system digitally interfaces with the machine, only really to transfer programs and command which one to run. The scheduling of jobs and pallets is done by the system, which works great, but someone has to input the jobs and quantities and dates. This was supposed to be done automatically by the ERP software, but it just... never happened.
+Here is a little background before the technical. I used to program and run a horizontal machining cell consisting of two identical Matsuura H+405s and a crane operated, 24 pallet storage container. This container system is designed by FASTEMS and it is an add-on type, third party system. Besides physically loading the machine, the system digitally interfaces with the machine, only really to transfer programs and command which one to run. The scheduling of jobs and pallets is done by the system, which works great, but someone has to input the jobs and quantities and dates. This was supposed to be done automatically by the ERP software, but it just... never happened.
 
 ## The Problem
 
-We as the operators, would need to take the routers, and input the jobs ourselves into the system. It's not that big of a deal, but that means there is a disconnect. The FASTEMS cell can have stale or innacurate forecasts. It needs to know about all routed jobs. The interface is web-based but stuck on a pedestal in front of the container. Operating the touch interface as an often dirty handed machinisht, it was not ideal. I dreaded using it. The keyboard was not positioned well for typing while standing, getting a track-ball helped with navigation,  but still, __it was a pain__.
+We as the operators, would need to take the routers, and input the jobs ourselves into the system. It's not that big of a deal, but that means there is a disconnect. The FASTEMS cell can have stale or inaccurate forecasts. It needs to know about all routed jobs. The interface is web-based but stuck on a pedestal in front of the container. Operating the touch interface as an dirty-handed machinist, it was not ideal. I dreaded using it. The keyboard was not positioned well for typing while standing, getting a track-ball helped with navigation,  but still, __it was a pain__.
 
 ## There Has to be a Better Way
 
@@ -103,7 +103,7 @@ def generate_methods(service):
   return methods
 ```
 
-Now that we have all the endpoints and arguments, we can create classes to map onto each one, and provide a rich collection of classes with API endpoints bound to corresponding methods. So, lets use some templates, and write it all out to our project for comsumption.
+Now that we have all the endpoints and arguments, we can create classes to map onto each one, and provide a rich collection of classes with API endpoints bound to corresponding methods. So, lets use some templates, and write it all out to our project for consumption.
 
 ```python
 def generate_class_files():
@@ -133,7 +133,7 @@ def generate_class_files():
     print('Done!\n')
 ```
 
-Running this script produced a set of [18 class files](https://github.com/cnc4me/python-soap-client/tree/main/fastems/services) with fully defined members, all similiar looking to the following. This was a huge win for me!
+Running this script produced a set of [18 class files](https://github.com/cnc4me/python-soap-client/tree/main/fastems/services) with fully defined members, all similar looking to the following. This was a huge win for me!
 
 ```python
 from fastems import services
